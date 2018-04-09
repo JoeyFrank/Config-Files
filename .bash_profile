@@ -3,6 +3,8 @@
 PATH="/Library/Frameworks/Python.framework/Versions/3.5/bin:${PATH}"
 export PATH
 
+PROMPT_DIRTRIM=2
+
 source ~/Scripts/git-completion.bash
 
 parse_git_branch() {
@@ -14,8 +16,11 @@ alias ls='ls -lFG'
 alias c='clear'
 alias b='cd ..'
 alias s5="cd Education/S5-College/"
+alias s6="cd /Users/Joey/Education/S6-College/"
 
-PS1='\e[32m${USER%@*}@\h \e[34m$(parse_git_branch) \e[93m$PWD \e[m\n> '
+bind "TAB:menu-complete"
+
+PS1='\e[32m${USER%@*}@\h \e[35m$(parse_git_branch) \e[93m\w\e[m\n> '
 export PS1
 
 LS_COLORS=$LS_COLORS:'di=0;34:'
