@@ -17,6 +17,7 @@ alias c='clear'
 alias b='cd ..'
 alias s5="cd Education/S5-College/"
 alias s6="cd /Users/Joey/Education/S6-College/"
+alias lsd="ls -lad */"
 
 bind "TAB:menu-complete"
 
