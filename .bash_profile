@@ -11,13 +11,24 @@ parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/[\1]/'
 }
 
+open_file_dir() {
+    if [[ -d $1 ]]; then
+        cd $1
+    elif [[ -f $1 ]]; then
+        vim $1
+    else
+        cd
+    fi
+}
+
 alias la='ls -alFG'
 alias ls='ls -lFG'
 alias c='clear'
 alias b='cd ..'
-alias s5="cd Education/S5-College/"
-alias s6="cd /Users/Joey/Education/S6-College/"
 alias lsd="ls -lad */"
+alias st="speedtest-cli"
+alias go="open_file_dir"
+alias cls="clear"
 
 bind "TAB:menu-complete"
 
